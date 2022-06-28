@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background: #ebc905;
+	display: grid;
+	place-items: center;
+	font-family: poppins, sans-serif;
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+button {
+	padding: 1rem 3rem;
+	font-size: 1rem;
+	transition: all 300ms ease;
+}
+
+button:hover {
+	opacity: 0.9;
+	cursor: pointer;
+}
+
+.info h2 {
+	white-space: nowrap;
+}
+
+/* Model */
+
+.model {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: grid;
+	place-items: center;
+	background: rgba(0, 0, 0, 0.3);
+	animation: openModel 1s linear forwards;
+	display: none;
+}
+
+.model .card {
+	background: white;
+	width: 50rem;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	padding: 2rem;
+	position: relative;
+}
+
+.model .card #close {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	font-size: 1.3rem;
+}
+
+.model .card .brand img {
+	display: block;
+	width: 100%;
+}
+
+.model .card h2 {
+	margin-bottom: 2rem;
+}
+
+.model .card form {
+	margin-top: 2rem;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.model .card input[type="email"] {
+	background: #eee;
+	width: 100%;
+	padding: 1rem;
+	outline: none;
+}
+
+.model .card input[type="submit"] {
+	background: #d3b701;
+	color: white;
+	padding: 0 1.6rem;
+}
+
+@keyframes openModel {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes closeModel {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.close-model-animation {
+	animation: closeModel 1s linear forwards;
+}
+
+/* MEDIA QUERIES*/
+
+@media screen and (max-width: 800px) {
+	.model .card {
+		flex-direction: column;
+		width: 80vw;
+		text-align: center;
+	}
+
+	.model .card .brand {
+		width: 15rem;
+		height: 15rem;
+		border-radius: 50%;
+		overflow: hidden;
+		margin-top: 4rem;
+	}
+
+	.model .card form {
+		display: block;
+	}
+
+	.model .card form input[type="email"],
+	.model .card form input[type="email"]::placeholder {
+		text-align: center;
+	}
+
+	.model .card form input[type="submit"] {
+		display: block;
+		width: 100%;
+		padding: 1rem 0;
+		margin-top: 0.6rem;
+	}
+}
